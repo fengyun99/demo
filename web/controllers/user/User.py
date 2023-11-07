@@ -1,14 +1,16 @@
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# @Time     : 2023/11/7 21:01
-# @Author   : FengYun
-# @File     : Account.py.py
-# @Software : PyCharm
 from flask import Blueprint,render_template
 
-route_user = Blueprint('user', __name__)
+route_user = Blueprint( 'user_page',__name__ )
 
-
-@route_user.route('/login')
+@route_user.route( "/login" )
 def login():
-    return render_template('user/login.html')
+    return render_template( "user/login.html" )
+
+@route_user.route( "/edit" )
+def edit():
+    return render_template( "user/edit.html" )
+
+@route_user.route( "/reset-pwd" )
+def resetPwd():
+    return render_template( "user/reset_pwd.html" )
